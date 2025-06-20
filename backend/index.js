@@ -37,6 +37,7 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Conectado a MongoDB');
-    app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
   })
   .catch(err => console.error(err));
