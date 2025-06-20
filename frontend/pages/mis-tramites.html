@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Mis Trámites Asignados - Notaría 172 Los Reyes</title>
+  <meta name="description" content="Sitio web oficial de la Notaría Pública 172 en Los Reyes de Salgado, Michoacán. Consulta y solicita tus trámites notariales en línea.">
+  <meta name="keywords" content="notaría 172, trámites notariales, Los Reyes, Michoacán, servicios notariales, Rosa Eugenia García Vallejo">
+  <meta name="author" content="Notaría Pública 172 - Rosa Eugenia García Vallejo">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="/css/mis-tramites-notario.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="contenedor">
+
+    <header class="header-panel">
+      <div class="header-contenido">
+        <h2 id="saludo-notario">Bienvenido, Notario</h2>
+        <div class="header-botones">
+          <a href="/pages/notario.html" class="btn-estandar">
+            <i class="fas fa-arrow-left"></i> Volver al panel
+          </a>
+          <button id="cerrar-sesion" class="btn-estandar">
+            <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="advertencia">
+      <p>
+        <i class="fas fa-circle-info"></i>
+        <span class="importante">Información:</span> En este panel se muestran los <span class="importante">trámites que has decidido procesar</span>. Tambien puedes descargar los archivos subidos para revisarlos. 
+        Para finalizar un trámite, presiona el botón <span class="importante">"Finalizar"</span> y podrás escribir un mensaje para quien solicitó el trámite.
+        <strong>Este mensaje no podrá ser modificado una vez enviado.</strong>
+      </p>
+    </div>
+
+    <main>
+      <section class="seleccion-tramite">
+        <h1>Trámites Asignados</h1>
+        <div id="contenedor-tramites" class="grupo-tramites"></div>
+      </section>
+    </main>
+
+    <div id="modal-finalizar" class="modal" style="display: none;">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-modal-finalizar">&times;</span>
+    <h3>¿Finalizar trámite?</h3>
+
+    <div class="alerta-advertencia">
+      <i class="fas fa-exclamation-triangle"></i>
+      <div>
+        <strong>¡Atención!</strong> Estás a punto de dar por finalizado el trámite.  
+        <p class="texto-advertencia">
+          Una vez finalizado, <strong>no podrás realizar más acciones</strong> sobre él.
+        </p>
+      </div>
+    </div>
+
+    <p class="descripcion">
+      Para finalizar, redacta las <strong>instrucciones u observaciones</strong> con las que debe proceder el solicitante.
+    </p>
+
+    <label for="observacionesFinal">Asegúrate de agregar solo las observaciones necesarias. Al principio de este mensaje, antes de las observaciones, se agregará automáticamente la leyenda:
+    "Su trámite ha sido finalizado con éxito, favor de seguir las siguientes indicaciones:"</label>
+    <textarea id="observacionesFinal" rows="4" placeholder="Escribe aquí las observaciones..."></textarea>
+
+    <div class="modal-botones">
+      <button id="btn-cancelar-finalizar" class="btn-estandar btn-cancelar">
+      <i class="fas fa-times"></i> Cancelar
+      </button>
+
+      <p id="error-observaciones" style="display: none;">Error, no puedes finalizar el trámite sin enviar instrucciones.</p>
+
+      <button id="btn-confirmar-finalizar" class="btn-estandar" disabled>
+      <i class="fas fa-check"></i> Confirmar mensaje
+      </button>
+    </div>
+  </div>
+</div>
+
+
+    <div id="modal-confirmacion-final" class="modal" style="display:none;">
+  <div class="modal-contenido decoracion-confirmacion">
+    <h3>Confirmación final</h3>
+    <div class="mensaje-confirmacion">
+      <p>
+        <strong>¿Estás seguro de que este es el mensaje final?</strong>
+      </p>
+      <p class="descripcion">
+        Este mensaje será enviado al solicitante como <strong>instrucción definitiva</strong> para continuar con su trámite. 
+        Debe contener información clara, por ejemplo: <em>presentarse presencialmente a firmar, llevar documentos originales</em>, etc.
+      </p>
+      <p class="advertencia-final">
+        Si no estás completamente seguro, puedes cancelar y volver a redactarlo. <strong>Una vez enviado, no podrá ser modificado.</strong>
+      </p>
+    </div>
+    <div class="modal-botones">
+      <button id="btn-cancelar-confirmacion" class="btn-estandar btn-cancelar">
+        <i class="fas fa-times"></i> Cancelar
+      </button>
+      <button id="btn-confirmar-envio" class="btn-estandar btn-confirmar">
+        <i class="fas fa-check"></i> Sí, finalizar trámite
+      </button>
+    </div>
+  </div>
+</div>
+
+
+    <div id="overlay-mensaje" class="overlay" style="display:none;">
+      <div class="overlay-contenido">
+        <p id="mensaje-overlay">✅ El trámite ha sido finalizado con éxito.</p>
+        <button id="cerrar-overlay" class="btn-estandar">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Notario Público, Los Reyes de Salgado, Michoacán. Todos los derechos reservados.</p>
+  </footer>
+
+  <script type="module" src="/js/mis-tramites-notario.js"></script>
+</body>
+</html>

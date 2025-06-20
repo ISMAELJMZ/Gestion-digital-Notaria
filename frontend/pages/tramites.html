@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Mis Trámites Solicitados - Notaría 172 Los Reyes</title>
+  <meta name="description" content="Sitio web oficial de la Notaría Pública 172 en Los Reyes de Salgado, Michoacán. Consulta y solicita tus trámites notariales en línea.">
+  <meta name="keywords" content="notaría 172, trámites notariales, Los Reyes, Michoacán, servicios notariales, Rosa Eugenia García Vallejo">
+  <meta name="author" content="Notaría Pública 172 - Rosa Eugenia García Vallejo">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="/css/tramites.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="contenedor">
+    <header class="header-panel">
+      <div class="header-contenido">
+        <h2>Mis Trámites</h2>
+        <div class="header-botones">
+          <a href="/pages/usuario.html">
+            <i class="fas fa-arrow-left"></i> Volver al Panel
+          </a>
+          <button id="btnCerrarSesion">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+      </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="advertencia info mensaje-tramites">
+      <p>
+    <i class="fas fa-info-circle"></i>
+    <span class="importante">Importante: Su tramite ha sido enviado con Exito. </span> En este panel puedes consultar todos los trámites que has solicitado. 
+    Además, podrás ver el <span class="importante">estado actual de cada trámite</span> y, si ya ha sido finalizado, 
+    recibirás un mensaje con las <span class="importante">instrucciones para recogerlo y firmarlo</span> de forma presencial.
+  </p>
+    </div>
+
+    <div id="lista-tramites" class="lista-tramites"></div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 Notario Público 172, Los Reyes de Salgado, Michoacán. Todos los derechos reservados.</p>
+  </footer>
+
+  <script type="module" src="/js/panelTramites.js"></script>
+</body>
+</html>

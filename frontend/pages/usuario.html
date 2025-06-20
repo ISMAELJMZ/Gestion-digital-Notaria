@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Formulario de Trámites - Notaría 172 Los Reyes</title>
+  <meta name="description" content="Sitio web oficial de la Notaría Pública 172 en Los Reyes de Salgado, Michoacán. Consulta y solicita tus trámites notariales en línea.">
+  <meta name="keywords" content="notaría 172, trámites notariales, Los Reyes, Michoacán, servicios notariales, Rosa Eugenia García Vallejo">
+  <meta name="author" content="Notaría Pública 172 - Rosa Eugenia García Vallejo">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="/css/panelUsuario.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="contenedor">
+    <header class="header-panel">
+      <div class="header-contenido">
+        <h2 id="bienvenida">Bienvenido, Usuario</h2>
+        <div class="header-botones">
+          <a href="/pages/tramites.html" class="btn-tramites">
+            <i class="fas fa-folder-open"></i> Ver mis trámites
+          </a>
+          <button id="btnCerrarSesion">
+            <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Modal -->
+    <div id="modal-exito" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+        <h2>Trámite enviado</h2>
+        <p>Tu trámite fue enviado correctamente. Pronto será revisado por el notario.</p>
+      </div>
+    </div>
+
+    <!-- Mensaje de advertencia -->
+    <div class="advertencia">
+      <p>
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="importante">Atención:</span> Todos los documentos deben ser
+        subidos en <span class="importante">formato PDF</span>. Asegúrate de que
+        cada archivo sea una <span class="importante">copia legible del documento original</span>,
+        ya que serán revisados por el notario al finalizar el trámite.
+      </p>
+    </div>
+
+    <section class="seleccion-tramite">
+      <h1>Solicitar Trámite</h1>
+      <label for="selector-tramite">Selecciona un trámite:</label>
+      <select id="selector-tramite">
+        <option value="">-- Selecciona --</option>
+        <option value="compraventa">Compraventa</option>
+         <option value="donacion">Donación</option>
+        <option value="testamentos">Testamentos</option>
+        <option value="contratos">Contratos</option>
+        <option value="firmas">Firmas</option>
+        <option value="certificacion-de-hehcos">Certificación de hechos</option>
+        <option value="asesoramiento-juridico">Asesoramiento jurídico</option>
+      </select>
+    </section>
+
+    <!-- formulario dinámico -->
+    <section id="formulario-container" class="formulario-dinamico"></section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Notario Público 172, Los Reyes de Salgado, Michoacán. Todos los derechos reservados.</p>
+  </footer>
+
+  <script type="module" src="/js/usuario.js"></script>
+</body>
+</html>

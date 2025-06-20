@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Panel del Administrador - Gestión de Cuentas - Notaría 172 Los Reyes</title>
+  <meta name="description" content="Sitio web oficial de la Notaría Pública 172 en Los Reyes de Salgado, Michoacán. Consulta y solicita tus trámites notariales en línea.">
+  <meta name="keywords" content="notaría 172, trámites notariales, Los Reyes, Michoacán, servicios notariales, Rosa Eugenia García Vallejo">
+  <meta name="author" content="Notaría Pública 172 - Rosa Eugenia García Vallejo">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <button id="cerrar-sesion" class="btn-cerrar-sesion">Cerrar sesión</button>
+  <h1>Panel de Administrador</h1>
+  <table id="usuariosTable">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div id="overlay"></div>
+  <div id="modal">
+    <h3>Cambiar contraseña</h3>
+    <input type="password" id="nuevaContrasena" placeholder="Nueva contraseña" />
+    <button id="btnGuardar">Guardar</button>
+    <button id="btnCancelar">Cancelar</button>
+  </div>
+
+  <script type="module" src="/js/admin.js" ></script>
+</body>
+</html>

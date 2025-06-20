@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Iniciar Sesión - Notaría 172 Los Reyes</title>
+  <meta name="description" content="Sitio web oficial de la Notaría Pública 172 en Los Reyes de Salgado, Michoacán. Consulta y solicita tus trámites notariales en línea.">
+  <meta name="keywords" content="notaría 172, trámites notariales, Los Reyes, Michoacán, servicios notariales, Rosa Eugenia García Vallejo">
+  <meta name="author" content="Notaría Pública 172 - Rosa Eugenia García Vallejo">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="stylesheet" href="/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo-header">
+      <img src="/img/logo-header-bg.jpeg" alt="Logo de la notaría" />
+    </div>
+     <div class="header-buttons">
+    <button onclick="window.location.href='/pages/index.html'">
+      <i class="fas fa-arrow-left"></i> Volver al inicio
+    </button>
+    
+  </div>
+  </header>
+
+  <main class="main-content">
+    <div class="login-wrapper">
+      <div class="login-box">
+        <h2>Iniciar Sesión</h2>
+
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+            <input type="text" id="telefono" name="telefono" required />
+             <small id="advertencia-telefono" style="color: orange;"></small>
+            <span id="error-telefono" class="error-texto"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="contrasena"><i class="fas fa-lock"></i> Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" required />
+            <span id="error-contrasena" class="error-texto"></span>
+          </div>
+
+          <span id="mensaje-error" class="error-texto"></span>
+
+          <button type="submit">
+            <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+          </button>
+        </form>
+
+        <p class="registrarse-link">
+          ¿No tienes cuenta?
+          <a href="/pages/registro.html">Regístrate</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Notario Público 172, Los Reyes de Salgado, Michoacán. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>
