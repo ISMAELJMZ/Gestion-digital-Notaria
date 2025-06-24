@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!decoded.requiereCambioPassword) {
     alert('Acceso no autorizado');
-    // Redirigir según rol
+   
     if (decoded.rol === 'admin') {
       window.location.href = 'admin.html';
     } else if (decoded.rol === 'notario') {

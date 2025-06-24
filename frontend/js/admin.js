@@ -175,29 +175,41 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Guardar nueva contraseña con verificación
-    btnGuardar.addEventListener('click', () => {
-      const nuevaPass = inputNuevaContrasena.value.trim();
-      if (!nuevaPass) {
-        alert('Por favor ingresa una nueva contraseña');
-        return;
-      }
-      abrirModalVerificar(async (passAdmin) => {
-        const resCambiar = await fetch(`${API_BASE_URL}/admin/usuarios/${idUsuarioSeleccionado}/contrasena`, {
-          method: 'PUT',
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ nuevaContrasena: nuevaPass, adminContrasena: passAdmin })
-        });
-        const result = await resCambiar.json();
-        if (!resCambiar.ok) throw new Error(result.mensaje || 'Error al cambiar contraseña');
-        alert(`✅ ${result.mensaje}`);
-        overlay.style.display = 'none';
-        modal.style.display = 'none';
-        inputNuevaContrasena.value = '';
-      });
+btnGuardar.addEventListener('click', () => {
+  const nuevaPass = inputNuevaContrasena.value.trim();
+
+  if (!nuevaPass) {
+    alert('⚠️ Por favor ingresa una nueva contraseña');
+    return;
+  }
+
+  // Validación estricta: al menos 6 caracteres, letras y números
+  const esValida = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/.test(nuevaPass);
+  if (!esValida) {
+    alert('⚠️ La contraseña debe tener al menos 6 caracteres, e incluir letras y números.');
+    return;
+  }
+
+  abrirModalVerificar(async (passAdmin) => {
+    const resCambiar = await fetch(`${API_BASE_URL}/admin/usuarios/${idUsuarioSeleccionado}/contrasena`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nuevaContrasena: nuevaPass, adminContrasena: passAdmin })
     });
+
+    const result = await resCambiar.json();
+    if (!resCambiar.ok) throw new Error(result.mensaje || 'Error al cambiar contraseña');
+
+    alert(`✅ ${result.mensaje}`);
+    overlay.style.display = 'none';
+    modal.style.display = 'none';
+    inputNuevaContrasena.value = '';
+  });
+});
+
   } catch (err) {
     console.error(err);
     alert('⚠️ Error al cargar datos de usuarios');

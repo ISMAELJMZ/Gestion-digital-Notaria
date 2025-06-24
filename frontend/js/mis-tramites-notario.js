@@ -6,13 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'index.html';
     });
 
-  const decoded = (() => {
+  const parseJwt = (token) => {
     try {
-      return JSON.parse(atob(token.split('.')[1]));
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(
+        atob(base64)
+          .split('')
+          .map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`)
+          .join('')
+      );
+      return JSON.parse(jsonPayload);
     } catch {
       return {};
     }
-  })();
+  };
+
+  const decoded = parseJwt(token);
 
   if (decoded.rol !== 'notario') {
     return mostrarMensaje('Acceso no autorizado. Cerrando sesión...', () => {
@@ -20,6 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'index.html';
     });
   }
+    const decodeUTF8 = (text) => {
+    try {
+      return decodeURIComponent(escape(text));
+    } catch {
+      return text;
+    }
+  };
 
   document.getElementById('saludo-notario').textContent = `Bienvenido, ${decoded?.nombre || 'Notario'}`;
 
