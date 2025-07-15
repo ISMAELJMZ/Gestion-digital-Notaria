@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecece6;
+  color: #2E2E2E;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== HEADER ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 50px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0 40px;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+header nav a {
+  color: #2C3E50;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: #1A242F;
+  border-color: #1A242F;
+  background-color: #ECF0F1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-buttons button {
+  padding: 8px 18px;
+  background-color: transparent;
+  color: #2C3E50;
+  border: 2px solid #2C3E50;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-buttons button:hover,
+.header-buttons button:focus {
+  background-color: #2C3E50;
+  color: white;
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.header-buttons button svg,
+.header-buttons button i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: inherit;
+}
+
+.header-buttons button:hover svg,
+.header-buttons button:focus svg {
+  transform: translateX(4px);
+}
+
+/* ========== RESPONSIVE HEADER ========== */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    height: 120px;
+  }
+
+  header nav {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .header-buttons button {
+    flex: 1 1 auto;
+    max-width: 150px;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+}
+
+/* ========== FOOTER ========== */
+footer.footer {
+  margin-top: auto;
+  background-color: #fff;
+  color: #4E342E;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* ========== AVISO DE PRIVACIDAD ========== */
+main.privacidad {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Georgia', serif;
+  color: #2C3E50;
+  line-height: 1.8;
+}
+
+main.privacidad h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1A242F;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+main.privacidad h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #4E342E;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+main.privacidad p {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+main.privacidad a {
+  color: #2C3E50;
+  text-decoration: underline;
+}
+
+main.privacidad a:hover {
+  color: #1A242F;
+}
+
+/* Responsive Aviso */
+@media (max-width: 768px) {
+  main.privacidad {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  main.privacidad h1 {
+    font-size: 1.5rem;
+  }
+
+  main.privacidad h3 {
+    font-size: 1.1rem;
+  }
+
+  main.privacidad p {
+    font-size: 0.95rem;
+  }
+}
